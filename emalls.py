@@ -6,6 +6,9 @@ import os
 from datetime import datetime
 now = datetime.now()
 current_time = now.strftime("%H:%M:%S")
+
+
+
 names = []
 persent =[]
 persian = []
@@ -13,10 +16,11 @@ lst =[]
 picture = []
 path =[]
 id_costomer = []
+
+# get url
 url = "https://emalls.ir/%D9%84%DB%8C%D8%B3%D8%AA-%D9%82%DB%8C%D9%85%D8%AA"
 page = requests.get(url)
-a = page.content
-suap = BeautifulSoup(a , 'html.parser')
+suap = BeautifulSoup(page.content, 'html.parser')
 
 
 namess = suap.find_all(class_="maintitle")  #name of all phones
